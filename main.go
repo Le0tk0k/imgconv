@@ -3,6 +3,7 @@ package main
 import (
 	"fmt"
 	"image"
+	"image/gif"
 	"image/jpeg"
 	"image/png"
 	"os"
@@ -33,6 +34,8 @@ func convert(dst, src string) error {
 		err = png.Encode(df, img)
 	case ".jpen", ".jpg":
 		err = jpeg.Encode(df, img, &jpeg.Options{Quality: jpeg.DefaultQuality})
+	case ".gif":
+		err = gif.Encode(df, img, nil)
 	}
 
 	if err != nil {
