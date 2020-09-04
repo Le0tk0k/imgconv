@@ -1,15 +1,14 @@
 package main
 
 import (
+	"flag"
 	"fmt"
-	"image"
-	"image/gif"
-	"image/jpeg"
-	"image/png"
 	"os"
 	"path/filepath"
-	"strings"
 )
+
+var from := flag.String("from", ".jpeg", "Extension before conversion")
+var to := flag.String("to", ".png", "Extension after conversion")
 
 func convert(dst, src string) error {
 	sf, err := os.Open(src)
