@@ -4,6 +4,7 @@ import (
 	"flag"
 	"fmt"
 	"os"
+	"strings"
 
 	"github.com/Le0tk0k/imgpro/imgconv"
 )
@@ -13,7 +14,9 @@ var to = flag.String("to", ".png", "Extension after conversion")
 
 func main() {
 	flag.Parse()
-	err := imgconv.Convert(flag.Arg(0), flag.Arg(1))
+	src := flag.Arg(0)
+	dst := strings.Replace(flag.Arg(0), *from, *to, 1)
+	err := imgconv.Convert(src, dst)
 	if err != nil {
 		fmt.Fprintf(os.Stderr, "%s\n", err.Error())
 	}
