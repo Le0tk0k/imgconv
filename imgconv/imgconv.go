@@ -2,6 +2,7 @@ package imgconv
 
 import (
 	"image"
+	"image/gif"
 	"image/jpeg"
 	"image/png"
 	"os"
@@ -32,6 +33,8 @@ func Convert(src, dst string) error {
 		err = png.Encode(df, img)
 	case ".jpg", ".jpeg":
 		err = jpeg.Encode(df, img, &jpeg.Options{Quality: jpeg.DefaultQuality})
+	case ".gif":
+		err = gif.Encode(df, img, nil)
 	}
 
 	if err != nil {
