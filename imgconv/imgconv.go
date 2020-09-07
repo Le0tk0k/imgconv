@@ -9,8 +9,8 @@ import (
 	"path/filepath"
 )
 
-// create and convert extension of images. (png, jpg, gif)
-func Convert(src, dst string) error {
+// Convert create and convert extension of images. (png, jpg, gif)
+func Convert(src, dst string, rmsrc bool) error {
 	sf, err := os.Open(src)
 	if err != nil {
 		return err
@@ -39,6 +39,13 @@ func Convert(src, dst string) error {
 
 	if err != nil {
 		return err
+	}
+
+	if rmsrc {
+		err = os.Remove(src)
+		if err != nil {
+			return err
+		}
 	}
 	return nil
 }
