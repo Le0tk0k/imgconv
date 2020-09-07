@@ -9,7 +9,7 @@ import (
 	"path/filepath"
 )
 
-// Convert images.
+// create and convert extension of images. (png, jpg, gif)
 func Convert(src, dst string) error {
 	sf, err := os.Open(src)
 	if err != nil {
