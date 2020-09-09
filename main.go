@@ -6,7 +6,7 @@ import (
 	"os"
 	"strings"
 
-	"github.com/Le0tk0k/imgpro/imgconv"
+	"github.com/Le0tk0k/imgconv/imgconv"
 )
 
 var from = flag.String("f", ".jpeg", "Extension before conversion")
