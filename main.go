@@ -11,7 +11,7 @@ import (
 
 var from = flag.String("f", ".jpeg", "Extension before conversion")
 var to = flag.String("t", ".png", "Extension after conversion")
-var rm = flag.Bool("f", false, "Remove file before conversion")
+var rm = flag.Bool("r", false, "Remove file before conversion")
 
 func main() {
 	flag.Parse()
