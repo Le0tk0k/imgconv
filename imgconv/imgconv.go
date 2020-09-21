@@ -9,6 +9,14 @@ import (
 	"path/filepath"
 )
 
+// RemoveSrc remove the file before conversion
+func RemoveSrc(src string) error {
+	if err := os.Remove(src); err != nil {
+		return err
+	}
+	return nil
+}
+
 // Convert create and convert extension of images. (png, jpg, gif)
 func Convert(src, dst string, rmsrc bool) error {
 	sf, err := os.Open(src)
@@ -42,10 +50,7 @@ func Convert(src, dst string, rmsrc bool) error {
 	}
 
 	if rmsrc {
-		err = os.Remove(src)
-		if err != nil {
-			return err
-		}
+		RemoveSrc(src)
 	}
 	return nil
 }
