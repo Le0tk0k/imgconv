@@ -5,7 +5,7 @@ This CLI convert extension of images.
 ## Install
 
 ```
-go get github.com/Le0tk0k/imgpro
+go get github.com/Le0tk0k/imgconv
 ```
 
 ## Option
