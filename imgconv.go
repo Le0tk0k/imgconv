@@ -11,7 +11,8 @@ import (
 
 // removeSrc remove the file before conversion
 func removeSrc(src string) error {
-	if err := os.Remove(src); err != nil {
+	err := os.Remove(src)
+	if err != nil {
 		return err
 	}
 	return nil
@@ -44,13 +45,14 @@ func Convert(src, dst string, rmsrc bool) error {
 	case ".gif":
 		err = gif.Encode(df, img, nil)
 	}
-
 	if err != nil {
 		return err
 	}
 
 	if rmsrc {
-		removeSrc(src)
+		if err = removeSrc(src); err != nil {
+			return err
+		}
 	}
 	return nil
 }
