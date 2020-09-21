@@ -26,5 +26,5 @@ $ # png -> jpg（Specify extension before and after conversion）
 $ ./main -f .png -t .jpg sample.png
 
 $ # jpg -> png（Delete the file before conversion）
-$ ./main -r sample.jpg
+$ ./main -r sample.jpeg
 ```
