@@ -9,8 +9,8 @@ import (
 	"path/filepath"
 )
 
-// RemoveSrc remove the file before conversion
-func RemoveSrc(src string) error {
+// removeSrc remove the file before conversion
+func removeSrc(src string) error {
 	if err := os.Remove(src); err != nil {
 		return err
 	}
@@ -50,7 +50,7 @@ func Convert(src, dst string, rmsrc bool) error {
 	}
 
 	if rmsrc {
-		RemoveSrc(src)
+		removeSrc(src)
 	}
 	return nil
 }
