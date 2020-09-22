@@ -2,6 +2,9 @@
 This CLI convert extension of images.
 .png, .jpg(.jpeg), and .gif are only supported.
 
+## Explanation Entry
+[Goで画像の形式を変換するCLIツールを作った](https://qiita.com/Le0tk0k/items/ef6121956634b374c3eb)
+
 ## Install
 
 ```
