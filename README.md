@@ -1,30 +1,25 @@
-# image converter written in Go
-This CLI convert extension of images.
-.png, .jpg(.jpeg), and .gif are only supported.
+# img2gray
+This CLI generates gray image.
+.png, .jpg(.jpeg), are only supported.
 
 ## Install
 
 ```
-go get github.com/Le0tk0k/imgconv
+go get github.com/Le0tk0k/img2gray
 ```
 
 ## Option
 
 |  Flag  |  Description  | Default |
 | ---- | ---- | --- |
-|  -f  |  Extension before conversion  | .jpeg |
-|  -t  |  Extension after conversion  | .png |
-|  -r  |  Remove file before conversion | false |
+|  -r  |  Remove sorce file | false |
 
 ## Usage
 
 ```
-$ # jpeg -> png（default, Do not delete the file before conversion）
+$ # default, Do not delete sorce file
 $ ./main sample.jpeg
 
-$ # png -> jpg（Specify extension before and after conversion）
-$ ./main -f .png -t .jpg sample.png
-
-$ # jpg -> png（Delete the file before conversion）
+$ Delete sorce file
 $ ./main -r sample.jpeg
 ```
