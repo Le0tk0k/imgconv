@@ -1,5 +1,5 @@
 # img2gray
-This CLI generates gray image.
+This CLI generates gray image.  
 .png, .jpg(.jpeg), are only supported.
 
 ## Install
